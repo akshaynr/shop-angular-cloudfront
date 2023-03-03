@@ -29,3 +29,10 @@ Follow the steps:
 - git clone
 - npm i
 - ng serve
+
+S3: http://akshay-angular-shop.s3.us-east-1.amazonaws.com
+Cloudfront: https://dshayi85wbzbz.cloudfront.net
+
+Automated :
+https://d3dfkbzxy9a43u.cloudfront.net
+S3: http://akshay-store-app-aws.s3-website-eu-west-1.amazonaws.com
