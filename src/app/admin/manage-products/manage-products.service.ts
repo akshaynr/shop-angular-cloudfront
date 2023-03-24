@@ -18,8 +18,8 @@ export class ManageProductsService extends ApiService {
     }
 
     return this.getPreSignedUrl(file.name).pipe(
-      switchMap((url) =>
-        this.http.put(url, file, {
+      switchMap((response) =>
+        this.http.put(response.url, file, {
           headers: {
             // eslint-disable-next-line @typescript-eslint/naming-convention
             'Content-Type': 'text/csv',
@@ -29,7 +29,7 @@ export class ManageProductsService extends ApiService {
     );
   }
 
-  private getPreSignedUrl(fileName: string): Observable<string> {
+  private getPreSignedUrl(fileName: string): Observable<any> {
     const url = this.getUrl('import', 'import');
 
     return this.http.get<string>(url, {
