@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export abstract class ApiService {
   protected readonly config: Config;
-  protected readonly http: HttpClient;
+  readonly http: HttpClient;
 
   protected constructor(protected readonly injector: Injector) {
     this.config = injector.get(CONFIG_TOKEN);
@@ -20,7 +20,7 @@ export abstract class ApiService {
   }
 
   /** Combines API endpoint and path into a single URL */
-  protected getUrl(api: ApiEndpoint, path: string): string {
+  getUrl(api: ApiEndpoint, path: string): string {
     return Location.joinWithSlash(this.config.apiEndpoints[api], path);
   }
 }
